@@ -1,0 +1,266 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		943EFA8D15A2249F00CBDE20 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 943EFA8C15A2249F00CBDE20 /* UIKit.framework */; };
+		943EFA8F15A2249F00CBDE20 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 943EFA8E15A2249F00CBDE20 /* Foundation.framework */; };
+		943EFA9115A2249F00CBDE20 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 943EFA9015A2249F00CBDE20 /* CoreGraphics.framework */; };
+		943EFA9715A224A000CBDE20 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 943EFA9515A224A000CBDE20 /* InfoPlist.strings */; };
+		943EFA9915A224A000CBDE20 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 943EFA9815A224A000CBDE20 /* main.m */; };
+		943EFA9D15A224A000CBDE20 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 943EFA9C15A224A000CBDE20 /* AppDelegate.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		943EFA8815A2249F00CBDE20 /* NKS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NKS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		943EFA8C15A2249F00CBDE20 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		943EFA8E15A2249F00CBDE20 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		943EFA9015A2249F00CBDE20 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		943EFA9415A224A000CBDE20 /* NKS-Info.plist */ = {isa = PBXFileReference; path = "NKS-Info.plist"; sourceTree = "<group>"; };
+		943EFA9615A224A000CBDE20 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		943EFA9815A224A000CBDE20 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		943EFA9A15A224A000CBDE20 /* NKS-Prefix.pch */ = {isa = PBXFileReference; path = "NKS-Prefix.pch"; sourceTree = "<group>"; };
+		943EFA9B15A224A000CBDE20 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		943EFA9C15A224A000CBDE20 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		943EFA8515A2249F00CBDE20 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				943EFA8D15A2249F00CBDE20 /* UIKit.framework in Frameworks */,
+				943EFA8F15A2249F00CBDE20 /* Foundation.framework in Frameworks */,
+				943EFA9115A2249F00CBDE20 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		943EFA7D15A2249C00CBDE20 = {
+			isa = PBXGroup;
+			children = (
+				943EFA9215A2249F00CBDE20 /* NKS */,
+				943EFA8B15A2249F00CBDE20 /* Frameworks */,
+				943EFA8915A2249F00CBDE20 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		943EFA8915A2249F00CBDE20 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				943EFA8815A2249F00CBDE20 /* NKS.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		943EFA8B15A2249F00CBDE20 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				943EFA8C15A2249F00CBDE20 /* UIKit.framework */,
+				943EFA8E15A2249F00CBDE20 /* Foundation.framework */,
+				943EFA9015A2249F00CBDE20 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		943EFA9215A2249F00CBDE20 /* NKS */ = {
+			isa = PBXGroup;
+			children = (
+				943EFA9B15A224A000CBDE20 /* AppDelegate.h */,
+				943EFA9C15A224A000CBDE20 /* AppDelegate.m */,
+				943EFA9315A224A000CBDE20 /* Supporting Files */,
+			);
+			path = NKS;
+			sourceTree = "<group>";
+		};
+		943EFA9315A224A000CBDE20 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				943EFA9415A224A000CBDE20 /* NKS-Info.plist */,
+				943EFA9515A224A000CBDE20 /* InfoPlist.strings */,
+				943EFA9815A224A000CBDE20 /* main.m */,
+				943EFA9A15A224A000CBDE20 /* NKS-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		943EFA8715A2249F00CBDE20 /* NKS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 943EFAA015A224A000CBDE20 /* Build configuration list for PBXNativeTarget "NKS" */;
+			buildPhases = (
+				943EFA8415A2249F00CBDE20 /* Sources */,
+				943EFA8515A2249F00CBDE20 /* Frameworks */,
+				943EFA8615A2249F00CBDE20 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NKS;
+			productName = NKS;
+			productReference = 943EFA8815A2249F00CBDE20 /* NKS.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		943EFA7F15A2249D00CBDE20 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = "Ryan Luce";
+			};
+			buildConfigurationList = 943EFA8215A2249D00CBDE20 /* Build configuration list for PBXProject "NKS" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 943EFA7D15A2249C00CBDE20;
+			productRefGroup = 943EFA8915A2249F00CBDE20 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				943EFA8715A2249F00CBDE20 /* NKS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		943EFA8615A2249F00CBDE20 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				943EFA9715A224A000CBDE20 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		943EFA8415A2249F00CBDE20 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				943EFA9915A224A000CBDE20 /* main.m in Sources */,
+				943EFA9D15A224A000CBDE20 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		943EFA9515A224A000CBDE20 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				943EFA9615A224A000CBDE20 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		943EFA9E15A224A000CBDE20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		943EFA9F15A224A000CBDE20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		943EFAA115A224A000CBDE20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NKS/NKS-Prefix.pch";
+				INFOPLIST_FILE = "NKS/NKS-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		943EFAA215A224A000CBDE20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NKS/NKS-Prefix.pch";
+				INFOPLIST_FILE = "NKS/NKS-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		943EFA8215A2249D00CBDE20 /* Build configuration list for PBXProject "NKS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				943EFA9E15A224A000CBDE20 /* Debug */,
+				943EFA9F15A224A000CBDE20 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		943EFAA015A224A000CBDE20 /* Build configuration list for PBXNativeTarget "NKS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				943EFAA115A224A000CBDE20 /* Debug */,
+				943EFAA215A224A000CBDE20 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 943EFA7F15A2249D00CBDE20 /* Project object */;
+}
