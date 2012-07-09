@@ -13,6 +13,11 @@
 		943EFA9715A224A000CBDE20 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 943EFA9515A224A000CBDE20 /* InfoPlist.strings */; };
 		943EFA9915A224A000CBDE20 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 943EFA9815A224A000CBDE20 /* main.m */; };
 		943EFA9D15A224A000CBDE20 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 943EFA9C15A224A000CBDE20 /* AppDelegate.m */; };
+		943EFAA715A2257A00CBDE20 /* NKSModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 943EFAA615A2257A00CBDE20 /* NKSModel.m */; };
+		943EFAAA15A5EE1000CBDE20 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 943EFAA915A5EE1000CBDE20 /* TestViewController.m */; };
+		943EFAAC15A5EE3000CBDE20 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 943EFAAB15A5EE3000CBDE20 /* GLKit.framework */; };
+		943EFAAE15A5EE4800CBDE20 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 943EFAAD15A5EE4800CBDE20 /* OpenGLES.framework */; };
+		943EFAB115A618DA00CBDE20 /* ColorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 943EFAB015A618DA00CBDE20 /* ColorModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,12 +25,20 @@
 		943EFA8C15A2249F00CBDE20 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		943EFA8E15A2249F00CBDE20 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		943EFA9015A2249F00CBDE20 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		943EFA9415A224A000CBDE20 /* NKS-Info.plist */ = {isa = PBXFileReference; path = "NKS-Info.plist"; sourceTree = "<group>"; };
+		943EFA9415A224A000CBDE20 /* NKS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NKS-Info.plist"; sourceTree = "<group>"; };
 		943EFA9615A224A000CBDE20 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		943EFA9815A224A000CBDE20 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		943EFA9A15A224A000CBDE20 /* NKS-Prefix.pch */ = {isa = PBXFileReference; path = "NKS-Prefix.pch"; sourceTree = "<group>"; };
-		943EFA9B15A224A000CBDE20 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		943EFA9A15A224A000CBDE20 /* NKS-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NKS-Prefix.pch"; sourceTree = "<group>"; };
+		943EFA9B15A224A000CBDE20 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		943EFA9C15A224A000CBDE20 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		943EFAA515A2257A00CBDE20 /* NKSModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NKSModel.h; path = Models/NKSModel.h; sourceTree = "<group>"; };
+		943EFAA615A2257A00CBDE20 /* NKSModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NKSModel.m; path = Models/NKSModel.m; sourceTree = "<group>"; };
+		943EFAA815A5EE1000CBDE20 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestViewController.h; path = ViewControllers/TestViewController.h; sourceTree = "<group>"; };
+		943EFAA915A5EE1000CBDE20 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestViewController.m; path = ViewControllers/TestViewController.m; sourceTree = "<group>"; };
+		943EFAAB15A5EE3000CBDE20 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		943EFAAD15A5EE4800CBDE20 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		943EFAAF15A618D900CBDE20 /* ColorModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ColorModel.h; path = Models/ColorModel.h; sourceTree = "<group>"; };
+		943EFAB015A618DA00CBDE20 /* ColorModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ColorModel.m; path = Models/ColorModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +46,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				943EFAAE15A5EE4800CBDE20 /* OpenGLES.framework in Frameworks */,
+				943EFAAC15A5EE3000CBDE20 /* GLKit.framework in Frameworks */,
 				943EFA8D15A2249F00CBDE20 /* UIKit.framework in Frameworks */,
 				943EFA8F15A2249F00CBDE20 /* Foundation.framework in Frameworks */,
 				943EFA9115A2249F00CBDE20 /* CoreGraphics.framework in Frameworks */,
@@ -45,6 +60,8 @@
 		943EFA7D15A2249C00CBDE20 = {
 			isa = PBXGroup;
 			children = (
+				943EFAAD15A5EE4800CBDE20 /* OpenGLES.framework */,
+				943EFAAB15A5EE3000CBDE20 /* GLKit.framework */,
 				943EFA9215A2249F00CBDE20 /* NKS */,
 				943EFA8B15A2249F00CBDE20 /* Frameworks */,
 				943EFA8915A2249F00CBDE20 /* Products */,
@@ -72,6 +89,8 @@
 		943EFA9215A2249F00CBDE20 /* NKS */ = {
 			isa = PBXGroup;
 			children = (
+				943EFAA415A224C800CBDE20 /* Models */,
+				943EFAA315A224BF00CBDE20 /* ViewControllers */,
 				943EFA9B15A224A000CBDE20 /* AppDelegate.h */,
 				943EFA9C15A224A000CBDE20 /* AppDelegate.m */,
 				943EFA9315A224A000CBDE20 /* Supporting Files */,
@@ -88,6 +107,26 @@
 				943EFA9A15A224A000CBDE20 /* NKS-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		943EFAA315A224BF00CBDE20 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				943EFAA815A5EE1000CBDE20 /* TestViewController.h */,
+				943EFAA915A5EE1000CBDE20 /* TestViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		943EFAA415A224C800CBDE20 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				943EFAA515A2257A00CBDE20 /* NKSModel.h */,
+				943EFAA615A2257A00CBDE20 /* NKSModel.m */,
+				943EFAAF15A618D900CBDE20 /* ColorModel.h */,
+				943EFAB015A618DA00CBDE20 /* ColorModel.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,6 +193,9 @@
 			files = (
 				943EFA9915A224A000CBDE20 /* main.m in Sources */,
 				943EFA9D15A224A000CBDE20 /* AppDelegate.m in Sources */,
+				943EFAA715A2257A00CBDE20 /* NKSModel.m in Sources */,
+				943EFAAA15A5EE1000CBDE20 /* TestViewController.m in Sources */,
+				943EFAB115A618DA00CBDE20 /* ColorModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,7 +233,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
@@ -210,7 +252,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;

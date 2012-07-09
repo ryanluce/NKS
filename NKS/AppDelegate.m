@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "NKSModel.h"
+#import "TestViewController.h"
 
 @implementation AppDelegate
 
@@ -17,7 +19,10 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
+    self.window.rootViewController = [[TestViewController alloc] init];
     [self.window makeKeyAndVisible];
+    NKSModel *m = [NKSModel sharedInstance];
+    [m reloadData];
     return YES;
 }
 
