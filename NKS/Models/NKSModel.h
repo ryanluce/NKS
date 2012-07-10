@@ -19,6 +19,8 @@
     //Array of rules 
     int *_rules;
     NSMutableDictionary *_dRules;
+    int *_iRules;
+    int _count;
     //Array of rows of data 0 through (numberOfRules-1)
     int *_data;
     //How big each pixel is to be drawn

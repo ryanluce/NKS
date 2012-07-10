@@ -7,15 +7,16 @@
 //
 
 #import "NKSModel.h"
-
+#include <stdlib.h>
+#include <stdio.h>
 
 //just hard code these for now [[UIScreen mainScreen] bounds] probably work as well, but may want to constrict this based on it's application.
-#define SCREEN_HEIGHT 1024
-#define SCREEN_WIDTH 728
+#define SCREEN_HEIGHT 500
+#define SCREEN_WIDTH 768
 
 @interface  NKSModel()
 //Recursively calculate permutations
-- (void)getPermutationWithExistingString:(NSString *)existingString;
+- (void)getPermutationWithExistingString:(char *)existingString;
 //Calculate every possible rule permutation
 - (void)reloadPermutations;
 
@@ -37,10 +38,10 @@
     if(self = [super init])
     {
         //Traditional Wolfram Cellular Automata dictates 2 rules and 1 neighbor, playing with it yields fun results
-        _numberOfRules = 3;
-        _totalNeighborCount = 1;
+        _numberOfRules = 2;
+        _totalNeighborCount = 3;
         //Just make them big and visible
-        self.pixelSize = 10;
+        self.pixelSize = 2;
         
         //For now make a random start row
         _data = malloc(_rows * _columns * sizeof(int)); 
@@ -55,6 +56,12 @@
     //Don't get the data until it's ready
     self.isReady = NO;
     
+    NSLog(@"Reloading perms");
+    NSDate *now = [NSDate dateWithTimeIntervalSinceNow:0];
+    
+    _iRules = malloc(pow(10, self.totalNeighborCount*2+1) * sizeof(int));
+    memset(_iRules, 0, pow(10, self.totalNeighborCount*2+1));
+    
     //Get all the rule perms
     [self reloadPermutations];
    
@@ -67,6 +74,12 @@
     //Make some random rules too
     _rules = malloc((pow(self.numberOfRules, self.totalNeighborCount*2+1) * sizeof(int)));
     memset(_rules, 0, pow(self.numberOfRules, self.totalNeighborCount*2+1));
+    
+
+    
+    _iRules[111] = 1;
+    _count = 0;
+    
     for (int i=0; i<pow(self.numberOfRules, self.totalNeighborCount*2+1); i++) {
         _rules[i] = rand()%self.numberOfRules;
     }
@@ -92,32 +105,52 @@
     }
     //Done calculating and ready for
     self.isReady = YES;
+    NSLog(@"Done");
+
+    
+    NSTimeInterval timeItTookToProcess = [now timeIntervalSinceNow];
+    NSLog(@"Took %f seconds to process", timeItTookToProcess);
 }
 
 - (void)reloadPermutations
 {
     //Fill up a dictionary with all the perms eg @"000" @"001" @"002" @"010" etc based on the rules and neighbors
     _dRules = [NSMutableDictionary dictionary];
-    [self getPermutationWithExistingString:@""];
+    char *tempStr = "";
+    [self getPermutationWithExistingString:tempStr];
 }
 
 //Recursively get all rule permuatations
-- (void)getPermutationWithExistingString:(NSString *)existingString
+- (void)getPermutationWithExistingString:(char *)existingString
 {
     
     //Number of rules to the power of neighbors
     int numNeighbors = self.totalNeighborCount * 2 + 1;
     for(int i = 0; i < self.numberOfRules; i++)
     {
-        NSString *tempString = [NSString stringWithFormat:@"%@%d", existingString, i];
-        if([tempString length] == numNeighbors)
+        //
+        char x[5];
+        //NSLog(@"x: %s", x);
+        sprintf(x, "%d", i);
+        
+        char newExistingString[self.totalNeighborCount * 2 + 2];
+        
+        strcpy(newExistingString, existingString);
+        
+        strcat(newExistingString, x);
+        if(strlen(newExistingString) == numNeighbors)
         {
             //If the string is as long as the number of neighbors plus the center pixel, go ahead and add it to the dictionary
+            int tIndex = atoi(newExistingString);
+           // NSLog(@"index: %d", tIndex);
+            //NSLog(@"count: %d", _count);
+            _iRules[tIndex] = _count;
+            _count++;
             
-            [_dRules setObject:[NSNumber numberWithInt:[_dRules count]]  forKey:tempString];
+            //[_dRules setObject:[NSNumber numberWithInt:[_dRules count]]  forKey:tempString];
         } else {
             //else keep adding to the string eg @"01" needs to be @"010" @"011" and @"012" with 1 neighbor and 3 rules
-            [self getPermutationWithExistingString:tempString];
+            [self getPermutationWithExistingString:newExistingString];
         }
     }
 }
@@ -126,7 +159,10 @@
 - (void)calculateRuleAtRow:(int)row andColumn:(int)column
 {
     //Make a search string to get out of the rule dictionary
-    NSString *searchString = @"";
+    //NSString *searchString = @"";
+    int charLength = self.totalNeighborCount * 2 + 2;
+    char searchString[charLength];
+    //NSLog(@"search string %s, %d", searchString, charLength);
     //temporarily change the row to the parent row
     row = row -1;
     
@@ -146,12 +182,23 @@
         }
         //Instead of a multidimension array, just offset each row with the number of columns
         int tempRule = _data[(row * _columns) + searchColumn];
-        
-        searchString = [NSString stringWithFormat:@"%@%d", searchString, tempRule];
+        if(i == -self.totalNeighborCount)
+        {
+            sprintf(searchString, "%d", tempRule);
+        } else {
+            char stringToConcat[2];
+            sprintf(stringToConcat, "%d", tempRule);
+            strcat(searchString, stringToConcat);            
+        }
+
+       
+        //searchString = [NSString stringWithFormat:@"%@%d", searchString, tempRule];
     }
     row = row + 1;
+    int theRule = atoi(searchString);
+    //NSLog(@"rule: %d", theRule);
     //Set the pixel to the rule index store in the dictionary
-    _data[column + (row * _columns)] = _rules[[[_dRules objectForKey:searchString] intValue]];
+    _data[column + (row * _columns)] = _rules[_iRules[theRule]];
 }
 
 - (void)setPixelSize:(int)pixelSize
@@ -189,3 +236,61 @@
     return sharedInstance;
 }
 @end
+
+/* My older, slower functions
+ 
+ //Recursively get all rule permuatations
+ - (void)getPermutationWithExistingString:(NSString *)existingString
+ {
+ 
+ //Number of rules to the power of neighbors
+ int numNeighbors = self.totalNeighborCount * 2 + 1;
+ for(int i = 0; i < self.numberOfRules; i++)
+ {
+ NSString *tempString = [NSString stringWithFormat:@"%@%d", existingString, i];
+ if([tempString length] == numNeighbors)
+ {
+ //If the string is as long as the number of neighbors plus the center pixel, go ahead and add it to the dictionary
+ 
+ [_dRules setObject:[NSNumber numberWithInt:[_dRules count]]  forKey:tempString];
+ } else {
+ //else keep adding to the string eg @"01" needs to be @"010" @"011" and @"012" with 1 neighbor and 3 rules
+ [self getPermutationWithExistingString:tempString];
+ }
+ }
+ }
+ 
+ //get the rule based on the previous rows pixel at this column and it's neighbors
+ - (void)calculateRuleAtRow:(int)row andColumn:(int)column
+ {
+ //Make a search string to get out of the rule dictionary
+ NSString *searchString = @"";
+ //temporarily change the row to the parent row
+ row = row -1;
+ 
+ //Loop through all the neighbors and the center pixel
+ for(int i = -self.totalNeighborCount; i <= self.totalNeighborCount; i++)
+ {
+ //i is a pixel offset, when it's 0 it is the center pixel
+ int searchColumn = column + i;
+ 
+ //Make sure to wrap around the edges, ie there is no -1 pixel at column 0
+ if(searchColumn < 0)
+ {
+ searchColumn += _columns;
+ } else if(searchColumn > _columns - 1)
+ {
+ searchColumn -= _columns;
+ }
+ //Instead of a multidimension array, just offset each row with the number of columns
+ int tempRule = _data[(row * _columns) + searchColumn];
+ 
+ searchString = [NSString stringWithFormat:@"%@%d", searchString, tempRule];
+ }
+ row = row + 1;
+ //Set the pixel to the rule index store in the dictionary
+ _data[column + (row * _columns)] = _rules[[[_dRules objectForKey:searchString] intValue]];
+ }
+
+ 
+ */
