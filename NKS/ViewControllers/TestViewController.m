@@ -14,6 +14,7 @@
 
 - (void)drawRectWithRect:(CGRect)rect withColor:(ColorModel *)color;
 - (void)sliderValueChanged:(UISlider *)slider;
+- (void)reloadData;
 
 
 @end
@@ -108,7 +109,7 @@
     
     _reloadData = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [_reloadData setTitle:@"Reload" forState:UIControlStateNormal];
-    [_reloadData addTarget:_model action:@selector(reloadData) forControlEvents:UIControlEventTouchUpInside];
+    [_reloadData addTarget:self action:@selector(reloadData) forControlEvents:UIControlEventTouchUpInside];
     _reloadData.frame = CGRectMake(10, yOffset, 150, 60);
     [self.view addSubview:_reloadData];
     
@@ -132,10 +133,15 @@
     } else if(slider == _pixelSize)
     {
         
-        _model.pixelSize = slider.value;
+       // _model.pixelSize = slider.value;
         _lPixelSize.text = [NSString stringWithFormat:@"Pixel size: %d", (int)slider.value];
         
     }
+}
+
+- (void)reloadData
+{
+    _model.pixelSize = (int)_pixelSize.value;
 }
 
 - (void)glkViewControllerUpdate:(GLKViewController *)controller

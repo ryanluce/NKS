@@ -37,15 +37,15 @@
 {
     if(self = [super init])
     {
+
+        
         //Traditional Wolfram Cellular Automata dictates 2 rules and 1 neighbor, playing with it yields fun results
         _numberOfRules = 3;
         _totalNeighborCount = 3;
         //Just make them big and visible
         self.pixelSize = 4;
         
-        //For now make a random start row
-        _data = malloc(_rows * _columns * sizeof(int)); 
-        memset(_data, 0, _rows*_columns);
+
     }
     return self;
 }
@@ -61,6 +61,10 @@
     
     _iRules = malloc(pow(10, self.totalNeighborCount*2+1) * sizeof(int));
     memset(_iRules, 0, pow(10, self.totalNeighborCount*2+1));
+    
+    //Alloc enough integers for t
+    _data = malloc(_rows * _columns * sizeof(int)); 
+    memset(_data, 0, _rows*_columns);
     
     //Get all the rule perms
     [self reloadPermutations];
@@ -209,7 +213,7 @@
     _rows = floor(SCREEN_HEIGHT/pixelSize);
     _columns = floor(SCREEN_WIDTH/pixelSize);
     //May want to do this automatically later, for now just let the viewcontroller manually call reloadData
-    //[self reloadData];
+    [self reloadData];
 }
 
 - (int)getRuleAtRow:(int)row andColumn:(int)column
