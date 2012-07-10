@@ -41,6 +41,7 @@
 @property (nonatomic, readonly) int columns;
 @property (nonatomic, strong) NSMutableArray *colors;
 @property (nonatomic) BOOL isReady;
+@property (nonatomic) BOOL updateView;
 
 //- (void)generateRandomData;
 - (void)reloadData;

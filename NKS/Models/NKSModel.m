@@ -11,7 +11,7 @@
 #include <stdio.h>
 
 //just hard code these for now [[UIScreen mainScreen] bounds] probably work as well, but may want to constrict this based on it's application.
-#define SCREEN_HEIGHT 500
+#define SCREEN_HEIGHT 600
 #define SCREEN_WIDTH 768
 
 @interface  NKSModel()
@@ -30,7 +30,7 @@
 @implementation NKSModel
 
 @synthesize  numberOfRules = _numberOfRules, totalNeighborCount = _totalNeighborCount, pixelSize = _pixelSize;
-@synthesize colors, rows = _rows, columns = _columns, isReady;
+@synthesize colors, rows = _rows, columns = _columns, isReady, updateView;
 
 
 - (id)init
@@ -38,10 +38,10 @@
     if(self = [super init])
     {
         //Traditional Wolfram Cellular Automata dictates 2 rules and 1 neighbor, playing with it yields fun results
-        _numberOfRules = 2;
+        _numberOfRules = 3;
         _totalNeighborCount = 3;
         //Just make them big and visible
-        self.pixelSize = 2;
+        self.pixelSize = 4;
         
         //For now make a random start row
         _data = malloc(_rows * _columns * sizeof(int)); 
@@ -105,6 +105,7 @@
     }
     //Done calculating and ready for
     self.isReady = YES;
+    self.updateView = YES;
     NSLog(@"Done");
 
     
@@ -221,6 +222,7 @@
 - (ColorModel *)getColorAtRow:(int)row andColumn:(int)column
 {
     int rule = [self getRuleAtRow:row andColumn:column];
+  
     return [self.colors objectAtIndex:rule];
 }
 

@@ -14,5 +14,17 @@
 {
     GLKBaseEffect *effect;
     NKSModel *_model;
+    
+    UISlider *_numberOfNeighbors;
+    UILabel *_lNeighbors;
+    UISlider *_numberOfColors;
+    UILabel *_lColors;
+    
+    UISlider *_pixelSize;
+    UILabel *_lPixelSize;
+    
+    UIButton *_reloadData;
+    
+    BOOL _isOpenGLViewReady;
 }
 @end
