@@ -11,14 +11,16 @@
 #include <stdio.h>
 
 //just hard code these for now [[UIScreen mainScreen] bounds] probably work as well, but may want to constrict this based on it's application.
-#define SCREEN_HEIGHT 600
+#define SCREEN_HEIGHT 1024
 #define SCREEN_WIDTH 768
 
 @interface  NKSModel()
 //Recursively calculate permutations
 - (void)getPermutationWithExistingString:(char *)existingString;
+//- (void)getPermutationWithExistingInt:(int)existingInt;
 //Calculate every possible rule permutation
 - (void)reloadPermutations;
+- (int)baseToDecimalWithInt:(int)n
 
 
 ;
@@ -41,7 +43,7 @@
         
         //Traditional Wolfram Cellular Automata dictates 2 rules and 1 neighbor, playing with it yields fun results
         _numberOfRules = 3;
-        _totalNeighborCount = 3;
+        _totalNeighborCount = 1;
         //Just make them big and visible
         self.pixelSize = 4;
         
@@ -57,7 +59,7 @@
     self.isReady = NO;
     
     NSLog(@"Reloading perms");
-    NSDate *now = [NSDate dateWithTimeIntervalSinceNow:0];
+    
     
     _iRules = malloc(pow(10, self.totalNeighborCount*2+1) * sizeof(int));
     memset(_iRules, 0, pow(10, self.totalNeighborCount*2+1));
@@ -67,7 +69,7 @@
     memset(_data, 0, _rows*_columns);
     
     //Get all the rule perms
-    [self reloadPermutations];
+    //[self reloadPermutations];
    
     //Just put a random first row. 
     for(int i=0; i<_columns; i++)
@@ -99,7 +101,7 @@
         tColorModel.alpha = 255;
         [self.colors addObject:tColorModel];
     }
-    
+    NSDate *now = [NSDate dateWithTimeIntervalSinceNow:0];
     //the hardwork comes here, calculate each 'pixel' based on it's neighbors
     for (int i = 1; i < _rows; i++)
     {
@@ -107,15 +109,18 @@
             [self calculateRuleAtRow:i andColumn:ii];
         }
     }
+	NSTimeInterval timeItTookToProcess = [now timeIntervalSinceNow];
+    NSLog(@"Took %f seconds to process", timeItTookToProcess);
     //Done calculating and ready for
     self.isReady = YES;
     self.updateView = YES;
     NSLog(@"Done");
 
     
-    NSTimeInterval timeItTookToProcess = [now timeIntervalSinceNow];
-    NSLog(@"Took %f seconds to process", timeItTookToProcess);
+
 }
+
+
 
 - (void)reloadPermutations
 {
@@ -159,21 +164,27 @@
         }
     }
 }
-
+// should be calculate off spring at row
+// self.totalNeighborCount radius
+// self.numberOfRules = colors
+// self.rules rulebits
 //get the rule based on the previous rows pixel at this column and it's neighbors
 - (void)calculateRuleAtRow:(int)row andColumn:(int)column
 {
     //Make a search string to get out of the rule dictionary
     //NSString *searchString = @"";
-    int charLength = self.totalNeighborCount * 2 + 2;
-    char searchString[charLength];
+    //int charLength = self.totalNeighborCount * 2 + 2;
+    //char searchString[charLength];
     //NSLog(@"search string %s, %d", searchString, charLength);
     //temporarily change the row to the parent row
     row = row -1;
     
+	//int counter = 0;
+	int searchInt = 0;
     //Loop through all the neighbors and the center pixel
     for(int i = -self.totalNeighborCount; i <= self.totalNeighborCount; i++)
     {
+		
         //i is a pixel offset, when it's 0 it is the center pixel
         int searchColumn = column + i;
         
@@ -187,23 +198,38 @@
         }
         //Instead of a multidimension array, just offset each row with the number of columns
         int tempRule = _data[(row * _columns) + searchColumn];
-        if(i == -self.totalNeighborCount)
-        {
-            sprintf(searchString, "%d", tempRule);
-        } else {
-            char stringToConcat[2];
-            sprintf(stringToConcat, "%d", tempRule);
-            strcat(searchString, stringToConcat);            
-        }
+		
+		//self.numberOfColors
+		searchInt *= self.numberOfRules;
+		searchInt += tempRule;
 
-       
-        //searchString = [NSString stringWithFormat:@"%@%d", searchString, tempRule];
     }
     row = row + 1;
-    int theRule = atoi(searchString);
-    //NSLog(@"rule: %d", theRule);
-    //Set the pixel to the rule index store in the dictionary
-    _data[column + (row * _columns)] = _rules[_iRules[theRule]];
+	
+    _data[column + (row * _columns)] = _rules[searchInt];
+}
+
+- (int)baseToDecimalWithInt:(int)n
+{
+	//neighborhoodSize = 3
+	//int neighborhoodSize = self.totalNeighborCount * 2 + 1;
+	//numberOfColors = 3
+	int numberOfColors = self.numberOfRules;
+	
+	//turn 111 into 22 etc
+	int nn = n;
+	int accumulator = 0;
+	int index = 0;
+	while(nn > 0)
+	{
+		accumulator = (nn % numberOfColors) * pow(numberOfColors, index);
+		nn /= numberOfColors;
+		
+		index++;
+	}
+	
+	
+	return accumulator;
 }
 
 - (void)setPixelSize:(int)pixelSize
