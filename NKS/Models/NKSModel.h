@@ -9,6 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "ColorModel.h"
 
+typedef struct {
+    float position[3];
+    float color[4];
+} Vertex;
 
 @interface NKSModel : NSObject
 {
@@ -28,6 +32,8 @@
     //How many rows to show based on pixel
     int _rows;
     int _columns;
+    Vertex _vertices[1024*768];
+    GLubyte _indices[1024*768];
     
     
     
@@ -42,6 +48,8 @@
 @property (nonatomic, strong) NSMutableArray *colors;
 @property (nonatomic) BOOL isReady;
 @property (nonatomic) BOOL updateView;
+@property (readonly) Vertex vertices;
+@property (readonly) GLubyte indices;
 
 //- (void)generateRandomData;
 - (void)reloadData;

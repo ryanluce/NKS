@@ -33,6 +33,7 @@
 
 @synthesize  numberOfRules = _numberOfRules, totalNeighborCount = _totalNeighborCount, pixelSize = _pixelSize;
 @synthesize colors, rows = _rows, columns = _columns, isReady, updateView;
+@synthesize indices, vertices;
 
 
 - (id)init
@@ -45,7 +46,7 @@
         _numberOfRules = 3;
         _totalNeighborCount = 1;
         //Just make them big and visible
-        self.pixelSize = 4;
+        self.pixelSize = 2;
         
 
     }
@@ -95,22 +96,26 @@
     for(int i =0; i < self.numberOfRules; i++)
     {
         ColorModel *tColorModel = [[ColorModel alloc] init];
-        tColorModel.red = rand()%255;
-        tColorModel.green = rand()%255;
-        tColorModel.blue = rand()%255;
-        tColorModel.alpha = 255;
+        tColorModel.red = ((float) (arc4random() % ((unsigned)RAND_MAX + 1)) / RAND_MAX);
+        tColorModel.green = ((float) (arc4random() % ((unsigned)RAND_MAX + 1)) / RAND_MAX);;
+        tColorModel.blue = ((float) (arc4random() % ((unsigned)RAND_MAX + 1)) / RAND_MAX);;
+        tColorModel.alpha = 1;
         [self.colors addObject:tColorModel];
     }
     NSDate *now = [NSDate dateWithTimeIntervalSinceNow:0];
     //the hardwork comes here, calculate each 'pixel' based on it's neighbors
+   
+    
     for (int i = 1; i < _rows; i++)
     {
         for (int ii = 0; ii < _columns; ii++) {
             [self calculateRuleAtRow:i andColumn:ii];
+
         }
     }
 	NSTimeInterval timeItTookToProcess = [now timeIntervalSinceNow];
     NSLog(@"Took %f seconds to process", timeItTookToProcess);
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"dataUpdated" object:nil];
     //Done calculating and ready for
     self.isReady = YES;
     self.updateView = YES;
@@ -267,6 +272,18 @@
     });
     return sharedInstance;
 }
+
+- (Vertex *)getVertices
+{
+    return _vertices;
+}
+
+- (GLubyte *)getIndices
+{
+    return _indices;
+}
+
+
 @end
 
 /* My older, slower functions

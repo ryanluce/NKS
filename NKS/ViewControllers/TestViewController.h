@@ -10,9 +10,8 @@
 #import <GLKit/GLKit.h>
 #import "NKSModel.h"
 
-@interface TestViewController : GLKViewController <GLKViewControllerDelegate, GLKViewDelegate>
+@interface TestViewController : UIViewController
 {
-    GLKBaseEffect *effect;
     NKSModel *_model;
     
     UISlider *_numberOfNeighbors;

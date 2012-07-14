@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9408CF4F15AF284B0060D129 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9408CF4E15AF284B0060D129 /* QuartzCore.framework */; };
+		9408CF5115AF820D0060D129 /* VertexShader.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 9408CF5015AF820D0060D129 /* VertexShader.glsl */; };
+		9408CF5315AF84AA0060D129 /* FragmentShader.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 9408CF5215AF84AA0060D129 /* FragmentShader.glsl */; };
+		9408CF6915B0AA130060D129 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9408CF6815B0AA120060D129 /* RootViewController.m */; };
 		943EFA8D15A2249F00CBDE20 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 943EFA8C15A2249F00CBDE20 /* UIKit.framework */; };
 		943EFA8F15A2249F00CBDE20 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 943EFA8E15A2249F00CBDE20 /* Foundation.framework */; };
 		943EFA9115A2249F00CBDE20 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 943EFA9015A2249F00CBDE20 /* CoreGraphics.framework */; };
@@ -21,6 +25,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9408CF4E15AF284B0060D129 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		9408CF5015AF820D0060D129 /* VertexShader.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = VertexShader.glsl; sourceTree = "<group>"; };
+		9408CF5215AF84AA0060D129 /* FragmentShader.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FragmentShader.glsl; sourceTree = "<group>"; };
+		9408CF6715B0AA120060D129 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RootViewController.h; path = ViewControllers/RootViewController.h; sourceTree = "<group>"; };
+		9408CF6815B0AA120060D129 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RootViewController.m; path = ViewControllers/RootViewController.m; sourceTree = "<group>"; };
 		943EFA8815A2249F00CBDE20 /* NKS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NKS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		943EFA8C15A2249F00CBDE20 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		943EFA8E15A2249F00CBDE20 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -46,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9408CF4F15AF284B0060D129 /* QuartzCore.framework in Frameworks */,
 				943EFAAE15A5EE4800CBDE20 /* OpenGLES.framework in Frameworks */,
 				943EFAAC15A5EE3000CBDE20 /* GLKit.framework in Frameworks */,
 				943EFA8D15A2249F00CBDE20 /* UIKit.framework in Frameworks */,
@@ -60,6 +70,7 @@
 		943EFA7D15A2249C00CBDE20 = {
 			isa = PBXGroup;
 			children = (
+				9408CF4E15AF284B0060D129 /* QuartzCore.framework */,
 				943EFAAD15A5EE4800CBDE20 /* OpenGLES.framework */,
 				943EFAAB15A5EE3000CBDE20 /* GLKit.framework */,
 				943EFA9215A2249F00CBDE20 /* NKS */,
@@ -94,6 +105,8 @@
 				943EFA9B15A224A000CBDE20 /* AppDelegate.h */,
 				943EFA9C15A224A000CBDE20 /* AppDelegate.m */,
 				943EFA9315A224A000CBDE20 /* Supporting Files */,
+				9408CF5015AF820D0060D129 /* VertexShader.glsl */,
+				9408CF5215AF84AA0060D129 /* FragmentShader.glsl */,
 			);
 			path = NKS;
 			sourceTree = "<group>";
@@ -114,6 +127,8 @@
 			children = (
 				943EFAA815A5EE1000CBDE20 /* TestViewController.h */,
 				943EFAA915A5EE1000CBDE20 /* TestViewController.m */,
+				9408CF6715B0AA120060D129 /* RootViewController.h */,
+				9408CF6815B0AA120060D129 /* RootViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -181,6 +196,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				943EFA9715A224A000CBDE20 /* InfoPlist.strings in Resources */,
+				9408CF5115AF820D0060D129 /* VertexShader.glsl in Resources */,
+				9408CF5315AF84AA0060D129 /* FragmentShader.glsl in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,6 +213,7 @@
 				943EFAA715A2257A00CBDE20 /* NKSModel.m in Sources */,
 				943EFAAA15A5EE1000CBDE20 /* TestViewController.m in Sources */,
 				943EFAB115A618DA00CBDE20 /* ColorModel.m in Sources */,
+				9408CF6915B0AA130060D129 /* RootViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,6 +319,7 @@
 				943EFAA215A224A000CBDE20 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

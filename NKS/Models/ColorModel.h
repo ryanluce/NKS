@@ -8,9 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+
 @interface ColorModel : NSObject
-@property (nonatomic) int red;
-@property (nonatomic) int green;
-@property (nonatomic) int blue;
-@property (nonatomic) int alpha;
+@property (nonatomic) float red;
+@property (nonatomic) float green;
+@property (nonatomic) float blue;
+@property (nonatomic) float alpha;
 @end
