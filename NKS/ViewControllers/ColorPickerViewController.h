@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ColorModel.h"
 
 @interface ColorPickerViewController : UIViewController
-
+{
+    UIImageView *_colorWheel;
+    UIView *_vColor1;
+    UIView *_vColor2;
+    UIView *_vColor3;
+    
+}
 @end

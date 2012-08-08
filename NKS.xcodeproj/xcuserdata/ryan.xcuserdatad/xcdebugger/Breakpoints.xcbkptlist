@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "NKS/Models/NKSModel.m"
-         timestampString = "363970753.068652"
+         timestampString = "364071219.426432"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "168"
-         endingLineNumber = "168"
+         startingLineNumber = "171"
+         endingLineNumber = "171"
          landmarkName = "-getPermutationWithExistingString:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -21,11 +21,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "NKS/Models/NKSModel.m"
-         timestampString = "363911483.072798"
+         timestampString = "364071219.426432"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "81"
-         endingLineNumber = "81"
+         startingLineNumber = "83"
+         endingLineNumber = "83"
          landmarkName = "-reloadData"
          landmarkType = "5">
       </FileBreakpoint>
@@ -34,11 +34,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "NKS/Models/NKSModel.m"
-         timestampString = "363970753.068652"
+         timestampString = "364071219.426432"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "194"
-         endingLineNumber = "194"
+         startingLineNumber = "197"
+         endingLineNumber = "197"
          landmarkName = "-calculateRuleAtRow:andColumn:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -47,13 +47,26 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "NKS/Models/NKSModel.m"
-         timestampString = "363911483.072798"
+         timestampString = "364071219.426432"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "111"
-         endingLineNumber = "111"
+         startingLineNumber = "114"
+         endingLineNumber = "114"
          landmarkName = "-reloadData"
          landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "NKS/Models/NKSModel.m"
+         timestampString = "364071219.426432"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "283"
+         endingLineNumber = "283"
+         landmarkName = "@implementation NKSModel"
+         landmarkType = "3">
       </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>

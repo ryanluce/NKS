@@ -33,7 +33,7 @@
 
 @synthesize  numberOfRules = _numberOfRules, totalNeighborCount = _totalNeighborCount, pixelSize = _pixelSize;
 @synthesize colors, rows = _rows, columns = _columns, isReady, updateView;
-@synthesize indices, vertices;
+//@synthesize indices, vertices;
 
 
 - (id)init
@@ -61,11 +61,13 @@
     
     NSLog(@"Reloading perms");
     
-    
-    _iRules = malloc(pow(10, self.totalNeighborCount*2+1) * sizeof(int));
-    memset(_iRules, 0, pow(10, self.totalNeighborCount*2+1));
+    // delete this
+    //_iRules = malloc(pow(10, self.totalNeighborCount*2+1) * sizeof(int));
+    //memset(_iRules, 0, pow(10, self.totalNeighborCount*2+1));
     
     //Alloc enough integers for t
+    
+    free(_data);
     _data = malloc(_rows * _columns * sizeof(int)); 
     memset(_data, 0, _rows*_columns);
     
@@ -79,12 +81,13 @@
     }
     
     //Make some random rules too
+    free(_rules);
     _rules = malloc((pow(self.numberOfRules, self.totalNeighborCount*2+1) * sizeof(int)));
     memset(_rules, 0, pow(self.numberOfRules, self.totalNeighborCount*2+1));
     
 
     
-    _iRules[111] = 1;
+ 
     _count = 0;
     
     for (int i=0; i<pow(self.numberOfRules, self.totalNeighborCount*2+1); i++) {
@@ -272,7 +275,7 @@
     });
     return sharedInstance;
 }
-
+/*
 - (Vertex *)getVertices
 {
     return _vertices;
@@ -282,7 +285,7 @@
 {
     return _indices;
 }
-
+*/
 
 @end
 

@@ -22,6 +22,9 @@
 		943EFAAC15A5EE3000CBDE20 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 943EFAAB15A5EE3000CBDE20 /* GLKit.framework */; };
 		943EFAAE15A5EE4800CBDE20 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 943EFAAD15A5EE4800CBDE20 /* OpenGLES.framework */; };
 		943EFAB115A618DA00CBDE20 /* ColorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 943EFAB015A618DA00CBDE20 /* ColorModel.m */; };
+		9492351815B469A400296477 /* ColorPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9492351715B469A400296477 /* ColorPickerViewController.m */; };
+		9492351C15B469E200296477 /* SimpleColorWheel-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 9492351A15B469E200296477 /* SimpleColorWheel-iPad.png */; };
+		9492351D15B469E200296477 /* SimpleColorWheel-iPad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9492351B15B469E200296477 /* SimpleColorWheel-iPad@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +51,10 @@
 		943EFAAD15A5EE4800CBDE20 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		943EFAAF15A618D900CBDE20 /* ColorModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ColorModel.h; path = Models/ColorModel.h; sourceTree = "<group>"; };
 		943EFAB015A618DA00CBDE20 /* ColorModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ColorModel.m; path = Models/ColorModel.m; sourceTree = "<group>"; };
+		9492351615B469A400296477 /* ColorPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ColorPickerViewController.h; path = ViewControllers/ColorPickerViewController.h; sourceTree = "<group>"; };
+		9492351715B469A400296477 /* ColorPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ColorPickerViewController.m; path = ViewControllers/ColorPickerViewController.m; sourceTree = "<group>"; };
+		9492351A15B469E200296477 /* SimpleColorWheel-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "SimpleColorWheel-iPad.png"; path = "Images/SimpleColorWheel-iPad.png"; sourceTree = "<group>"; };
+		9492351B15B469E200296477 /* SimpleColorWheel-iPad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "SimpleColorWheel-iPad@2x.png"; path = "Images/SimpleColorWheel-iPad@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +107,7 @@
 		943EFA9215A2249F00CBDE20 /* NKS */ = {
 			isa = PBXGroup;
 			children = (
+				9492351915B469AF00296477 /* Images */,
 				943EFAA415A224C800CBDE20 /* Models */,
 				943EFAA315A224BF00CBDE20 /* ViewControllers */,
 				943EFA9B15A224A000CBDE20 /* AppDelegate.h */,
@@ -127,6 +135,8 @@
 			children = (
 				943EFAA815A5EE1000CBDE20 /* TestViewController.h */,
 				943EFAA915A5EE1000CBDE20 /* TestViewController.m */,
+				9492351615B469A400296477 /* ColorPickerViewController.h */,
+				9492351715B469A400296477 /* ColorPickerViewController.m */,
 				9408CF6715B0AA120060D129 /* RootViewController.h */,
 				9408CF6815B0AA120060D129 /* RootViewController.m */,
 			);
@@ -142,6 +152,15 @@
 				943EFAB015A618DA00CBDE20 /* ColorModel.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		9492351915B469AF00296477 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				9492351A15B469E200296477 /* SimpleColorWheel-iPad.png */,
+				9492351B15B469E200296477 /* SimpleColorWheel-iPad@2x.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,6 +217,8 @@
 				943EFA9715A224A000CBDE20 /* InfoPlist.strings in Resources */,
 				9408CF5115AF820D0060D129 /* VertexShader.glsl in Resources */,
 				9408CF5315AF84AA0060D129 /* FragmentShader.glsl in Resources */,
+				9492351C15B469E200296477 /* SimpleColorWheel-iPad.png in Resources */,
+				9492351D15B469E200296477 /* SimpleColorWheel-iPad@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,6 +235,7 @@
 				943EFAAA15A5EE1000CBDE20 /* TestViewController.m in Sources */,
 				943EFAB115A618DA00CBDE20 /* ColorModel.m in Sources */,
 				9408CF6915B0AA130060D129 /* RootViewController.m in Sources */,
+				9492351815B469A400296477 /* ColorPickerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

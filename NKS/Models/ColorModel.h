@@ -14,4 +14,7 @@
 @property (nonatomic) float green;
 @property (nonatomic) float blue;
 @property (nonatomic) float alpha;
+
+- (float)hue;
+
 @end

@@ -32,8 +32,8 @@ typedef struct {
     //How many rows to show based on pixel
     int _rows;
     int _columns;
-    Vertex _vertices[1024*768];
-    GLubyte _indices[1024*768];
+    //Vertex _vertices[1024*768];
+    //GLubyte _indices[1024*768];
     
     
     
